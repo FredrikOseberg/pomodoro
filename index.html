@@ -3,23 +3,41 @@
 <head>
 	<title>Pomodoro Clock</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<script src="https://use.fontawesome.com/d1fe4982c8.js"></script>
 </head>
 <body>
 	<div id="viewport">
-		<div class="modal flex opacity">
+		<div class="modal">
 			<div class="modal-content">
 				<span class="close-modal">&times;</span>
 				<i class="fa fa-thumbs-up" aria-hidden="true"></i>
 				<h2>Great work!</h2>
 				<p class="modal-text">Your working streak is: 1</p>
 				<div class="modal-time-details">
-					<div class="modal-work-time">
-						<h4>Work Time</h4>
-						<span class="modal-work-time"></span>
+					<div class="modal-work-time-details">
+						<h3>Work Time</h3>
+						<div class="modal-wrapper">
+							<button class="modal-work-time-decrement modal-time-btn">
+								<i class="fa fa-minus" aria-hidden="true"></i>
+							</button>
+							<span class="modal-work-time">5</span>
+							<button class="modal-work-time-increment modal-time-btn">
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</button>
+						</div>
 					</div>
-					<div class="modal-break-time">
-						<h4>Break Time</h4>
+					<div class="modal-break-time-details">
+						<h3>Break Time</h3>
+						<div class="modal-wrapper">
+							<button class="modal-break-time-decrement modal-time-btn">
+								<i class="fa fa-minus" aria-hidden="true"></i>
+							</button>
+							<span class="modal-break-time">5</span>
+							<button class="modal-break-time-increment modal-time-btn">
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</button>
+						</div>
 					</div>
 				</div>
 				<div class="modal-buttons">

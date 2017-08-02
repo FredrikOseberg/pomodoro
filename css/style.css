@@ -159,8 +159,15 @@ body {
 }
 
 .fa-thumbs-up {
-	font-size: 4em;
+	font-size: 6em;
 	color: #3498db;
+	margin-bottom: 10px;
+}
+
+.modal-text {
+	font-size: 1.2em;
+	font-family: 'Open Sans', sans-serif;
+	color: #636262;
 }
 
 .modal-buttons {
@@ -205,11 +212,39 @@ body {
 .modal-time-details {
 	display: flex;
 	justify-content: center;
+	width: 70%;
+	margin: 0 auto;
+	border: 1px solid #3498db;
+	border-radius: 3px;
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+
+.modal-work-time-details,
+.modal-break-time-details {
+	padding: 20px 40px;
 }
 
 .modal-work-time,
 .modal-break-time {
-	padding: 20px 40px;
+	padding: 0 10px;
+	color: #636262;
+}
+
+.modal-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.modal-time-btn {
+	background-color: #3498db;
+	border-radius: 3px;
+	border: none;
+	color: #fff;
+}
+
+.modal-time-btn:hover {
+	cursor: pointer;
 }
 
 .opacity {

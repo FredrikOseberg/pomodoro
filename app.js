@@ -35,12 +35,16 @@ var modalContinue = document.querySelector('.continue');
 var modalBack = document.querySelector('.back');
 var modalClose = document.querySelector('.close-modal');
 var modalText = document.querySelector('.modal-text');
+var modalWorkTimeIncrement = document.querySelector('.modal-work-time-increment');
+var modalWorkTimeDecrement = document.querySelector('.modal-work-time-decrement');
+var modalBreakTimeIncrement = document.querySelector('.modal-break-time-increment');
+var modalBreakTimeDecrement = document.querySelector('.modal-break-time-decrement');
+
 
 var workTime = 25;
 var breakTime = 5;
 var intervalID;
 var consecutiveSessions = 0;
-
 var endOfPomodoro = false;
 
 var eventHandlers = {
@@ -93,6 +97,22 @@ var eventHandlers = {
 		if (e.target === modal) {
 			eventHandlers.handleCloseModal();
 		}
+	},
+	handleModalWorkTimeIncrement: function() {
+		timerCtrl.incrementWorkTime();
+		UICtrl.renderModalWorkTime();
+	},
+	handleModalWorkTimeDecrement: function() {
+		timerCtrl.decrementWorkTime();
+		UICtrl.renderModalWorkTime();
+	},
+	handleModalBreakTimeIncrement: function() {
+		timerCtrl.incrementBreakTime();
+		UICtrl.renderModalBreakTime();
+	},
+	handleModalBreakTimeDecrement: function() {
+		timerCtrl.decrementBreakTime();
+		UICtrl.renderModalBreakTime();
 	}
 }
 
@@ -168,6 +188,19 @@ var UICtrl = {
 		} else {
 			countdownSeconds.textContent = seconds;
 		}
+	},
+	renderModalWorkTime: function() {
+		const minuteCount = document.querySelector('.modal-work-time');
+		minuteCount.textContent = workTime;
+	},
+	renderModalBreakTime: function() {
+		const minuteCount = document.querySelector('.modal-break-time');
+		minuteCount.textContent = breakTime;
+	},
+	renderModal: function() {
+		modalText.textContent = `Your working streak is: ${consecutiveSessions}`;
+		UICtrl.renderModalWorkTime();
+		UICtrl.renderModalBreakTime();
 	}
 }
 
@@ -273,12 +306,13 @@ function finished() {
 	displayLaunchButton();
 	displaySetTimerDetails();
 	consecutiveSessions += 1;
-	modalText.textContent = `Your working streak is: ${consecutiveSessions}`;
+	UICtrl.renderModal();
 	displayModal();
-	setTimeout(function resetAudio() {
+	setTimeout(function resetSound() {
 		resetAudio();
 	}, 22000);
 }
+
 
 // Event Listeners
 launch.addEventListener('click', eventHandlers.handleLaunch);
@@ -291,3 +325,7 @@ modalContinue.addEventListener('click', eventHandlers.handleLaunch);
 modalBack.addEventListener('click', eventHandlers.handleCloseModal);
 modalClose.addEventListener('click', eventHandlers.handleCloseModal);
 window.addEventListener('click', eventHandlers.handleWindowClick);
+modalWorkTimeIncrement.addEventListener('click', eventHandlers.handleModalWorkTimeIncrement);
+modalWorkTimeDecrement.addEventListener('click', eventHandlers.handleModalWorkTimeDecrement);
+modalBreakTimeIncrement.addEventListener('click', eventHandlers.handleModalBreakTimeIncrement);
+modalBreakTimeDecrement.addEventListener('click', eventHandlers.handleModalBreakTimeDecrement);
