@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pomodoro Clock</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script src="https://use.fontawesome.com/d1fe4982c8.js"></script>
+</head>
+<body>
+	<div id="viewport">
+		<div class="modal">
+			<div class="modal-content">
+				<span class="close-modal">&times;</span>
+				<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+				<h2>Great work!</h2>
+				<p class="modal-text">Your working streak is: 1</p>
+				<div class="modal-buttons">
+					<div class="modal-button back">No, I'm done.</div>
+					<div class="modal-button continue">Continue working</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="set-timer-details block opacity">
+			<div class="pomodoro-clock work-time">
+				<div class="pomodoro-container">
+					<h3>Work time</h3>
+					<div class="clock">
+						<div class="minus minus-worktime"><i class="fa fa-minus" aria-hidden="true"></i>
+						</div><span class="worktime-timer">25</span>
+						<div class="plus plus-worktime"><i class="fa fa-plus" aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="pomodoro-clock break-time">
+				<div class="pomodoro-container">
+					<h3>Break time</h3>
+					<div class="clock">
+						<div class="minus minus-breaktime"><i class="fa fa-minus" aria-hidden="true"></i>
+						</div><span class="breaktime-timer">5</span>
+						<div class="plus plus-breaktime"><i class="fa fa-plus" aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+			<h3 class="countdown-text">Work damn you!</h3>
+			<div class="countdown">
+				<span class="countdown-minutes">25</span>:<span class="countdown-seconds">00</span>
+			</div>
+
+		<div class="launch button block">Work</div>
+		<div class="end button">End</div>
+
+		<audio src="sound/queencut.mp3" class="work-sound"></audio>
+		<audio src="sound/9to5.mp3" class="break-sound"></audio>
+
+	</div>
+	<script src="bundle.js"></script>
+</body>
+</html>
