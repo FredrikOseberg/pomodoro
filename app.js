@@ -88,6 +88,11 @@ var eventHandlers = {
 		hideModal();
 		resetAudio();
 		consecutiveSessions = 0;
+	},
+	handleWindowClick: function(e) {
+		if (e.target === modal) {
+			eventHandlers.handleCloseModal();
+		}
 	}
 }
 
@@ -285,4 +290,4 @@ plusBreakTime.addEventListener('click', eventHandlers.handlePlusBreakTime);
 modalContinue.addEventListener('click', eventHandlers.handleLaunch);
 modalBack.addEventListener('click', eventHandlers.handleCloseModal);
 modalClose.addEventListener('click', eventHandlers.handleCloseModal);
-modal.addEventListener('click', eventHandlers.handleCloseModal);
+window.addEventListener('click', eventHandlers.handleWindowClick);

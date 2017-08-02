@@ -149,6 +149,7 @@ body {
 .modal-content {
 	display: flex;
 	flex-direction: column;
+	z-index: 999;
 	background: #fff;
 	width: 80%;
 	border-radius: 3px;
@@ -199,6 +200,16 @@ body {
 
 .close-modal:hover {
 	cursor: pointer;
+}
+
+.modal-time-details {
+	display: flex;
+	justify-content: center;
+}
+
+.modal-work-time,
+.modal-break-time {
+	padding: 20px 40px;
 }
 
 .opacity {
