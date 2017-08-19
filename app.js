@@ -2,22 +2,6 @@
 
 import './css/style.css';
 
-// 1. Set a starting time and break time
-// 2. When the starting time is set and the clock is started
-// countdown from starting time 0.
-// 3. Once the clock is down to zero, reinitialize the clock with
-// the break time and start it.
-// 4. Once the break time hits zero, prompt the user to start the pomodoro
-// clock again with the same values
-
-// Basic Structure
-// Variables to hold work time and break time
-// startCountDown(time)
-// Hide setters for work time and break time
-// Show a countdown 
-// Show a stop button
-// 
-
 // Elements
 var launch = document.querySelector('.launch');
 var end = document.querySelector('.end');
@@ -40,13 +24,14 @@ var modalWorkTimeDecrement = document.querySelector('.modal-work-time-decrement'
 var modalBreakTimeIncrement = document.querySelector('.modal-break-time-increment');
 var modalBreakTimeDecrement = document.querySelector('.modal-break-time-decrement');
 
-
+// Globals
 var workTime = 25;
 var breakTime = 5;
 var intervalID;
 var consecutiveSessions = 0;
 var endOfPomodoro = false;
 
+// Handlers
 var eventHandlers = {
 	handleLaunch: function () {
 		hideSetTimerDetails();
