@@ -151,6 +151,7 @@ body {
 	flex-direction: column;
 	z-index: 999;
 	background: #fff;
+	max-width: 600px;
 	width: 80%;
 	border-radius: 3px;
 	text-align: center;

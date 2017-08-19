@@ -71,6 +71,8 @@ var eventHandlers = {
 		displaySetTimerDetails();
 		clearInterval(intervalID);
 		resetAudio();
+		UICtrl.renderBreakTime();
+		UICtrl.renderWorkTime();
 	},
 	handleMinusWorkTime: function() {
 		timerCtrl.decrementWorkTime();
